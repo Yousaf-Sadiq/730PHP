@@ -27,6 +27,7 @@ if (!isset($email) || empty($email)) {
 
 } else {
 
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $status["error"]++;
 

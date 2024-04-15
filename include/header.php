@@ -1,14 +1,16 @@
 <?php 
 ob_start();
+session_start();
 require_once dirname(__FILE__)."/connection.php";
 require_once dirname(__FILE__)."/helper.php";
 require_once dirname(__FILE__)."/web.php";
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="zxx">
 
-<!-- Mirrored from wpthemesgrid.com/themes/eshop/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Mar 2024 20:09:37 GMT -->
 <head>
 
 <meta charset="utf-8">

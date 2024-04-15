@@ -1,3 +1,4 @@
+
 <header class="header shop">
 
     <div class="topbar">
@@ -22,8 +23,21 @@
                         <ul class="list-main">
                             <li><i class="ti-location-pin"></i> Store location</li>
                             <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
-                            <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                            <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+                            <?php
+                          
+                            if (isset($_SESSION["email"]) && !empty($_SESSION["email"])) {
+                                # code...
+                            
+                                ?>
+                                <li><i class="ti-user"></i> <a href="<?php echo Dashboard ?>">My account</a></li>
+                                <li><i class="ti-power-off"></i><a href="<?php echo LOGOUT ?>">LOGOUT</a></li>
+                            <?php } else { ?>
+
+                                <li><i class="ti-user"></i> <a href="<?php echo REGISTER ?>">SIGN UP</a></li>
+                                <li><i class="ti-power-off"></i><a href="<?php echo LOGIN ?>">Login</a></li>
+
+                            <?php } ?>
+                           
                         </ul>
                     </div>
 
@@ -121,21 +135,22 @@
             </div>
         </div>
     </div>
-<style>
-    .toggler_nav{
-	display: none;
-}
-.all-category{
-    cursor: pointer;
-}
-</style>
+    <style>
+        .toggler_nav {
+            display: none;
+        }
+
+        .all-category {
+            cursor: pointer;
+        }
+    </style>
     <div class="header-inner">
         <div class="container">
             <div class="cat-nav-head">
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="all-category">
-                            <h3 class="cat-heading">  <i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
+                            <h3 class="cat-heading"> <i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
                             <ul class="main-category toggler_nav">
                                 <li><a href="#">New Arrivals <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                     <ul class="sub-category">

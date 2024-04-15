@@ -1,6 +1,12 @@
 <?php
 
 require_once dirname(__FILE__) . "/include/header.php";
+
+if(isset($_SESSION["email"]) || !empty($_SESSION["email"])){
+
+    redirect_url(Dashboard);
+}
+
 ?>
 
 <div class="breadcrumbs">
@@ -41,7 +47,7 @@ require_once dirname(__FILE__) . "/include/header.php";
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Your Email<span>*</span></label>
-                                    <input type="text" name="email" placeholder>
+                                    <input type="email" name="email" placeholder required="required">
                                 </div>
                             </div>
                             <div class="col-12">
