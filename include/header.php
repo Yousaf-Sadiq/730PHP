@@ -6,6 +6,22 @@ require_once dirname(__FILE__)."/helper.php";
 require_once dirname(__FILE__)."/web.php";
 
 
+if (isset($_SESSION["email"]) && !empty($_SESSION["email"])) {
+  
+  $sql = "SELECT * FROM `users` WHERE `id` = '{$_SESSION["user_id"]}'";
+
+  $exe_fetch= $conn->query($sql);
+
+  $row_fetch= $exe_fetch->fetch_assoc();
+}
+else{
+  $row_fetch=[
+    "user_name"=>"Guest",
+    "email"=>"none",
+
+  ];
+}
+
 ?>
 
 <!DOCTYPE html>
