@@ -44,14 +44,52 @@ function refresh_url(int $second, string $url)
 }
 
 
+
+function File_upload(string $input, array $ext, string $to)
+{
+  $file = $_FILES[$input];
+
+  $file_name = ceil(rand(1,99))."_".$file["name"];
+  $tmp_name = $file["tmp_name"];
+
+
+  $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION)); // png,jpg 
+
+  if (!in_array($file_ext, $ext)) {
+    $string = implode(",", $ext);
+    ERROR_MSG("{$string} ONLY REQUIRED EXTENTION");
+
+    return false;
+  }
+
+  $destination = $to . "/" . $file_name;
+  $url = [];
+  if (move_uploaded_file($tmp_name, $destination)) {
+    $url["absolute_url"] = absolute_upload . "/" . $file_name;
+    $url["relative_url"] = relative_upload . "/" . $file_name;
+
+    return $url;
+
+  } else {
+    ERROR_MSG("FILE UPLOADING ERROR");
+    return false;
+  }
+
+}
+
+
+
+
+
 function redirect_url(string $url)
 {
   header("Location:{$url}");
 }
 
-function pre(array $a){
-echo "<pre>";
-print_r($a);
-echo "</pre>";
+function pre(array $a)
+{
+  echo "<pre>";
+  print_r($a);
+  echo "</pre>";
 }
 ?>

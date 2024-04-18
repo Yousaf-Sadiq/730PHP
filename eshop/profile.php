@@ -93,13 +93,13 @@ if (!isset($_SESSION["email"]) || empty($_SESSION["email"])) {
 
 
 
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                             <div class="form-group">
                                                 <label>Your Email<span>*</span></label>
                                                 <input type="email" value="<?php echo $row_fetch["email"] ?>"
                                                     name="email" placeholder required="required">
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-12">
                                             <div class="form-group">

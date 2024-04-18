@@ -2,8 +2,15 @@
 // global route
 
 define("ROOTPATH","http://localhost/");
+define("ROOTPATH2",$_SERVER["DOCUMENT_ROOT"]);
 
 define("folder","php_work_630/ecom");
+
+// absolute url
+define('absolute_upload', ROOTPATH.folder."/asset/images/upload");
+// relative url
+define('relative_upload', ROOTPATH2."/".folder."/asset/images/upload");
+
 
 
 // routes

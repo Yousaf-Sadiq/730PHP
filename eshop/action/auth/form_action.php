@@ -157,12 +157,26 @@ if (isset($_POST["update_profile"]) && !empty($_POST["update_profile"])) {
 
 
     $user_name = filter_data($_POST["user_name"]);
-    $email = filter_data($_POST["email"]);
+    $email = filter_data($_SESSION["email"]);
     $password = filter_data($_POST["password"]);
 
-    $file= $_FILES["profile"];
+    $file = $_FILES["profile"];
 
+    $extention = ["jpg", "jpeg", "png"];
+    $destination = relative_upload . "/";
 
+    $file_name = File_upload("profile",$extention,$destination );
+   
+   if ($file_name == false) {
+    refresh_url(2, PROFILE);
+   }
+   
+    // relative path ../../upload
+//  absolute path  https:// /upload/
+   
+   
+
+    pre($abc);
     pre($file);
 
     die;
@@ -205,7 +219,7 @@ if (isset($_POST["update_profile"]) && !empty($_POST["update_profile"])) {
         $encrypt = base64_encode($password);
 
 
-         $update = "UPDATE `users` SET `user_name`='{$user_name}', `email`='{$email}',`password`='{$hash}',
+        $update = "UPDATE `users` SET `user_name`='{$user_name}', `email`='{$email}',`password`='{$hash}',
                     `ptoken`='{$encrypt}' WHERE `id` = '{$_SESSION["user_id"]}' ";
 
         $update_exe = $conn->query($update);
