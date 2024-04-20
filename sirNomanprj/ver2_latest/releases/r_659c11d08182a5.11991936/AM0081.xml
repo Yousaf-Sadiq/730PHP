@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>AM0081.jpg</CoverFile>
+  <Name>Domingo1</Name>
+  <Catalog>AM0081</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Dominox Latte</Artists>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Techno</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>AM0081_1.mp3</AudioFile>
+      <AudioFile>AM0081_1.mp3</AudioFile>
+      <Name>Dreaming</Name>
+      <Name>Dreaming</Name>
+      <MixVersion>original mix</MixVersion>
+      <MixVersion>original mix</MixVersion>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <Contributors>
+        <Contributor>
+          <Name>Domingo Alfonso</Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Domingo Alfonso</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Techno</Genre>
+      <Genre>Techno</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>- Select Platform -</ExclusivePlatform>
+  <ExclusiveDuration>- Select -</ExclusiveDuration>
+  <iTunesPreOrderDate/>
+  <ExclusiveDate/>
+  <Stores>Traxsource,Beatport,JunoDownload</Stores>
+  <Territories>WW</Territories>
+</Release>

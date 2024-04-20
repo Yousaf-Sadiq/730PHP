@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>QPR120.jpg</CoverFile>
+  <Name>You For Real</Name>
+  <Catalog>QPR120</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Dominox Latte</Artists>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Deep House</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-07-21</ReleaseDate>
+  <Songs/>
+  <ExclusivePlatform>Spotify</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-06-30</iTunesPreOrderDate>
+  <ExclusiveDate>2023-07-07</ExclusiveDate>
+  <Stores>Spotify,iTunes,Tidal</Stores>
+  <Territories>WW</Territories>
+</Release>

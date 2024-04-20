@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>RAP017.png</CoverFile>
+  <Name>To Show You</Name>
+  <Catalog>RAP017</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Keytones</Artists>
+  <Label>Ritual Art Projects</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Deep House</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-09-22</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>RAP017_1.mp3</AudioFile>
+      <AudioFile>RAP017_1.mp3</AudioFile>
+      <Name>To Show You</Name>
+      <Name>To Show You</Name>
+      <PrimaryArtists>Keytones</PrimaryArtists>
+      <PrimaryArtists>Keytones</PrimaryArtists>
+      <Composer>Celimpilo Mchunu</Composer>
+      <Composer>Celimpilo Mchunu</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Deep House</Genre>
+      <Genre>Deep House</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-08-31</iTunesPreOrderDate>
+  <ExclusiveDate>2023-09-08</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes,Tidal</Stores>
+  <Territories>WW</Territories>
+</Release>

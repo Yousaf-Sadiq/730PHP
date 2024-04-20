@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <Name>You For Real</Name>
+  <Catalog>QPENT123</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>VARIOUS</Artists>
+  <Label>label test</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Tech House</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-05-12</ReleaseDate>
+  <Songs/>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-04-21</iTunesPreOrderDate>
+  <ExclusiveDate>2023-04-28</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes,Tidal</Stores>
+</Release>

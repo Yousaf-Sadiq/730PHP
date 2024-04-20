@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>JAR066.png</CoverFile>
+  <Name>Revive My Spirit</Name>
+  <Catalog>JAR066</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Avenue Deep</Artists>
+  <Label>Jive Afrika Recordings</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Soulful House</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-05-12</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <AudioFile>JAR066_1.mp3</AudioFile>
+      <Name>Eeh Yah</Name>
+      <MixVersion>Original Mix</MixVersion>
+      <PrimaryArtists>Avenue Deep</PrimaryArtists>
+      <Composer>Pascal Lebogang Magano</Composer>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Soulful House</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>zxx</VocalLanguage>
+    </Song>
+    <Song>
+      <TrackNumber>2</TrackNumber>
+      <AudioFile>JAR066_2.mp3</AudioFile>
+      <Name>Revive My Soul</Name>
+      <MixVersion>Original Mix</MixVersion>
+      <PrimaryArtists>Avenue Deep</PrimaryArtists>
+      <Composer>Pascal Lebogang Magano</Composer>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Techno</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>zxx</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-04-21</iTunesPreOrderDate>
+  <ExclusiveDate>2023-04-28</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes,Tidal</Stores>
+</Release>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>QPENT12.jpg</CoverFile>
+  <Name>white sands</Name>
+  <Catalog>QPENT12</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Dominox Latte</Artists>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Techno</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-09-22</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <AudioFile>QPENT12_1.mp3</AudioFile>
+      <Name>white sands</Name>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <Composer>Domingo Alfonso</Composer>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Techno</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-09-01</iTunesPreOrderDate>
+  <ExclusiveDate>2023-09-08</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload</Stores>
+  <Territories>WW</Territories>
+</Release>

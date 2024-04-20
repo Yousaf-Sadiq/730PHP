@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>QPENT12oo1bv.jpg</CoverFile>
+  <Name>You For Real</Name>
+  <Catalog>QPENT12oo1bv</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Dominox Latte</Artists>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Techno</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-11-10</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>QPENT12oo1bv_1.mp3</AudioFile>
+      <AudioFile>QPENT12oo1bv_1.mp3</AudioFile>
+      <Name>You For Real</Name>
+      <Name>You For Real</Name>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <Contributors>
+        <Contributor>
+          <Name>Domingo Alfonso</Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Domingo Alfonso</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Techno</Genre>
+      <Genre>Techno</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Explicit</Explicit>
+      <Explicit>Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-11-10</iTunesPreOrderDate>
+  <ExclusiveDate>2023-11-10</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes,Tidal</Stores>
+  <Territories>WW</Territories>
+</Release>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>rsp123.jpg</CoverFile>
+  <Name>Domingo to you</Name>
+  <Catalog>rsp123</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Dominox Latte</Artists>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Techno</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2024-01-26</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>rsp123_1.wav</AudioFile>
+      <AudioFile>rsp123_1.wav</AudioFile>
+      <Name>bomini to you</Name>
+      <Name>bomini to you</Name>
+      <MixVersion>original mix</MixVersion>
+      <MixVersion>original mix</MixVersion>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <FeaturingArtists>VARIOUS</FeaturingArtists>
+      <FeaturingArtists>VARIOUS</FeaturingArtists>
+      <Contributors>
+        <Contributor>
+          <Name>Domingo Alfonso</Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Domingo Alfonso</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Techno</Genre>
+      <Genre>Techno</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2024-01-12</iTunesPreOrderDate>
+  <ExclusiveDate>2024-01-19</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify</Stores>
+  <Territories>WW</Territories>
+</Release>

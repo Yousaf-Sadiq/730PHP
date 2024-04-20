@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>QPR12012.png</CoverFile>
+  <Name>muisc of life(doing)</Name>
+  <Catalog>QPR12012</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Dominox Latte</Artists>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Techno</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>QPR12012_1.wav</AudioFile>
+      <AudioFile>QPR12012_1.wav</AudioFile>
+      <Name>music in life(i)</Name>
+      <Name>music in life(i)</Name>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <Contributors>
+        <Contributor>
+          <Name>Domingo Alfonso</Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Domingo Alfonso</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Techno</Genre>
+      <Genre>Techno</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>- Select Platform -</ExclusivePlatform>
+  <ExclusiveDuration>- Select -</ExclusiveDuration>
+  <iTunesPreOrderDate/>
+  <ExclusiveDate/>
+  <Territories>WW</Territories>
+</Release>

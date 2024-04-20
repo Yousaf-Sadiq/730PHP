@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>RSR01.jpg</CoverFile>
+  <Name>STARKID DACOZ</Name>
+  <Catalog>RSR01</Catalog>
+  <Compilation>No</Compilation>
+  <Artists>starkid dacoz</Artists>
+  <Label>Roc Star Records</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Dance</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2024-01-17</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>RSR01_1.mp3</AudioFile>
+      <AudioFile>RSR01_1.mp3</AudioFile>
+      <Name>BABY BABY FT DELASOUNDZ</Name>
+      <Name>BABY BABY FT DELASOUNDZ</Name>
+      <MixVersion>MASTER</MixVersion>
+      <MixVersion>MASTER</MixVersion>
+      <PrimaryArtists>starkid dacoz</PrimaryArtists>
+      <PrimaryArtists>starkid dacoz</PrimaryArtists>
+      <Contributors>
+        <Contributor>
+          <Name>awoyemi damilarte emmanuel</Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>awoyemi damilarte emmanuel</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Dance</Genre>
+      <Genre>Dance</Genre>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Explicit</Explicit>
+      <Explicit>Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>iTunes</ExclusivePlatform>
+  <ExclusiveDuration>- Select -</ExclusiveDuration>
+  <iTunesPreOrderDate>2024-01-14</iTunesPreOrderDate>
+  <ExclusiveDate>2024-01-15</ExclusiveDate>
+  <Stores>All</Stores>
+  <Territories>WW</Territories>
+</Release>

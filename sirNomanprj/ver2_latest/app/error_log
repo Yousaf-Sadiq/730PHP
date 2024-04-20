@@ -1,0 +1,28 @@
+[31-Oct-2022 16:07:13 UTC] PHP Warning:  include(include/dbConfig.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:07:13 UTC] PHP Warning:  include(): Failed opening 'include/dbConfig.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:07:13 UTC] PHP Warning:  require_once(include/global_info.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5
+[31-Oct-2022 16:07:13 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'include/global_info.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5
+[31-Oct-2022 16:07:25 UTC] PHP Warning:  include(include/dbConfig.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:07:25 UTC] PHP Warning:  include(): Failed opening 'include/dbConfig.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:07:25 UTC] PHP Warning:  require_once(include/global_info.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5
+[31-Oct-2022 16:07:25 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'include/global_info.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5
+[31-Oct-2022 16:07:45 UTC] PHP Warning:  include(include/dbConfig.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:07:45 UTC] PHP Warning:  include(): Failed opening 'include/dbConfig.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:07:45 UTC] PHP Warning:  require_once(include/global_info.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5
+[31-Oct-2022 16:07:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'include/global_info.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5
+[31-Oct-2022 16:08:16 UTC] PHP Warning:  include(include/dbConfig.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:08:16 UTC] PHP Warning:  include(): Failed opening 'include/dbConfig.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 4
+[31-Oct-2022 16:08:16 UTC] PHP Warning:  require_once(include/global_info.php): Failed to open stream: No such file or directory in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5
+[31-Oct-2022 16:08:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'include/global_info.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/unirende/fyp.unirenders.com/admin/app/calendar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/unirende/fyp.unirenders.com/admin/app/calendar.php on line 5

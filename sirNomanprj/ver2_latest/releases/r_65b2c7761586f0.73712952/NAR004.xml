@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>NAR004.png</CoverFile>
+  <Name>Black Rose </Name>
+  <Catalog>NAR004</Catalog>
+  <Compilation>No</Compilation>
+  <Artists>Erik Sibelle </Artists>
+  <Label>NuAfro Records </Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Deep House</Genre>
+  <MetadataLanguage>ab</MetadataLanguage>
+  <ReleaseDate>2024-02-10</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>NAR004_1.mp3</AudioFile>
+      <AudioFile>NAR004_1.mp3</AudioFile>
+      <Name>Black Rose </Name>
+      <Name>Black Rose </Name>
+      <MixVersion>Original Mix</MixVersion>
+      <MixVersion>Original Mix</MixVersion>
+      <PrimaryArtists>Erik Sibelle </PrimaryArtists>
+      <PrimaryArtists>Erik Sibelle </PrimaryArtists>
+      <Contributors>
+        <Contributor>
+          <Name>Makuya Dzivhuluwani </Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Makuya Dzivhuluwani </Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Deep House</Genre>
+      <Genre>Deep House</Genre>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Explicit</Explicit>
+      <Explicit>Explicit</Explicit>
+      <VocalLanguage>- Select -</VocalLanguage>
+      <VocalLanguage>- Select -</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>- Select Platform -</ExclusivePlatform>
+  <ExclusiveDuration>- Select -</ExclusiveDuration>
+  <iTunesPreOrderDate>2024-02-01</iTunesPreOrderDate>
+  <ExclusiveDate>2024-02-06</ExclusiveDate>
+  <Stores>All</Stores>
+  <Territories>WW</Territories>
+</Release>

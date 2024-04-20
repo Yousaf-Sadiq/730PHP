@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>RAP024_1.mp3</AudioFile>
+      <AudioFile>RAP024_1.mp3</AudioFile>
+    </Song>
+    <Song>
+      <TrackNumber>2</TrackNumber>
+      <FileId>2</FileId>
+      <FileId>2</FileId>
+      <AudioFile>RAP024_2.mp3</AudioFile>
+      <AudioFile>RAP024_2.mp3</AudioFile>
+    </Song>
+  </Songs>
+  <action>ADD</action>
+  <Territories>WW</Territories>
+</Release>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>RAPO19.png</CoverFile>
+  <Name>Astronomy </Name>
+  <Catalog>RAPO19</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Synth-O-Ven</Artists>
+  <Label>Ritual Art Projects</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Deep House</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-10-20</ReleaseDate>
+  <Songs/>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-10-06</iTunesPreOrderDate>
+  <ExclusiveDate>2023-10-13</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes,TikTok</Stores>
+  <Territories>WW</Territories>
+</Release>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>qqqq123.png</CoverFile>
+  <Name>Face The World</Name>
+  <Catalog>qqqq123</Catalog>
+  <Compilation>No</Compilation>
+  <Artists>Dominox Latte</Artists>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Techno</Genre>
+  <MetadataLanguage>ab</MetadataLanguage>
+  <ReleaseDate>2023-09-22</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>qqqq123_1.flac</AudioFile>
+      <AudioFile>qqqq123_1.flac</AudioFile>
+      <Name>white sands</Name>
+      <Name>white sands</Name>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <PrimaryArtists>Dominox Latte</PrimaryArtists>
+      <Contributors>
+        <Contributor>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Domingo Alfonso</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Techno</Genre>
+      <Genre>Techno</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Non-Explicit</Explicit>
+      <Explicit>Non-Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-09-01</iTunesPreOrderDate>
+  <ExclusiveDate>2023-09-08</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes,Tidal</Stores>
+  <Territories>WW</Territories>
+</Release>

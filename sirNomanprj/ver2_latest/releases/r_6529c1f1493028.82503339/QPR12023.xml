@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>QPR12023.jpg</CoverFile>
+  <Name>You For Real</Name>
+  <Catalog>QPR12023</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Label>Q Phonic Ent</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Techno</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-11-10</ReleaseDate>
+  <Songs/>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-10-20</iTunesPreOrderDate>
+  <ExclusiveDate>2023-10-27</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes,Tidal</Stores>
+  <Territories>WW</Territories>
+</Release>

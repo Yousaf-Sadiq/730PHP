@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>ALM243.jpg</CoverFile>
+  <Catalog>ALM243</Catalog>
+  <Compilation>No</Compilation>
+  <Artists>Newton</Artists>
+  <Label>AFOLABI Music</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Soulful House</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2024-03-29</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>ALM243_1.mp3</AudioFile>
+      <AudioFile>ALM243_1.mp3</AudioFile>
+      <Name>Appreciate you</Name>
+      <Name>Appreciate you</Name>
+      <MixVersion>Original</MixVersion>
+      <MixVersion>Original</MixVersion>
+      <PrimaryArtists>Newton</PrimaryArtists>
+      <PrimaryArtists>Newton</PrimaryArtists>
+      <FeaturingArtists>Gregory Lebsny</FeaturingArtists>
+      <FeaturingArtists>Gregory Lebsny</FeaturingArtists>
+      <Contributors>
+        <Contributor>
+          <Name>Supang Lebotse</Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Supang Lebotse</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Soulful House</Genre>
+      <Genre>Soulful House</Genre>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Clean</Explicit>
+      <Explicit>Clean</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>iTunes</ExclusivePlatform>
+  <ExclusiveDuration>4</ExclusiveDuration>
+  <iTunesPreOrderDate>2024-03-15</iTunesPreOrderDate>
+  <ExclusiveDate>2024-03-01</ExclusiveDate>
+  <Stores>All</Stores>
+  <Territories>WW</Territories>
+</Release>

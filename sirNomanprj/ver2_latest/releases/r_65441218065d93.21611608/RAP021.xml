@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Release>
+  <action>ADD</action>
+  <CoverFile>RAP021.png</CoverFile>
+  <Name>Groover</Name>
+  <Catalog>RAP021</Catalog>
+  <UPCCode>GET</UPCCode>
+  <Compilation>No</Compilation>
+  <Artists>Baantu </Artists>
+  <Label>Ritual Art Projects</Label>
+  <MainGenre>Dance</MainGenre>
+  <Genre>Deep House</Genre>
+  <MetadataLanguage>en</MetadataLanguage>
+  <ReleaseDate>2023-11-24</ReleaseDate>
+  <Songs>
+    <Song>
+      <TrackNumber>1</TrackNumber>
+      <FileId>1</FileId>
+      <FileId>1</FileId>
+      <AudioFile>RAP021_1.mp3</AudioFile>
+      <AudioFile>RAP021_1.mp3</AudioFile>
+      <Name>Groover</Name>
+      <Name>Groover</Name>
+      <MixVersion>Remix </MixVersion>
+      <MixVersion>Remix </MixVersion>
+      <PrimaryArtists>Lansky</PrimaryArtists>
+      <PrimaryArtists>Lansky</PrimaryArtists>
+      <Remixers>Baantu </Remixers>
+      <Remixers>Baantu </Remixers>
+      <Contributors>
+        <Contributor>
+          <Name>Siphiwe Mpanza</Name>
+          <Role>Composer</Role>
+        </Contributor>
+      </Contributors>
+      <Composer>Siphiwe Mpanza</Composer>
+      <MainGenre>Dance</MainGenre>
+      <MainGenre>Dance</MainGenre>
+      <Genre>Deep House</Genre>
+      <Genre>Deep House</Genre>
+      <ISRCCode>GET</ISRCCode>
+      <ISRCCode>GET</ISRCCode>
+      <AlbumOnly>No</AlbumOnly>
+      <AlbumOnly>No</AlbumOnly>
+      <Explicit>Explicit</Explicit>
+      <Explicit>Explicit</Explicit>
+      <VocalLanguage>en</VocalLanguage>
+      <VocalLanguage>en</VocalLanguage>
+    </Song>
+  </Songs>
+  <ExclusivePlatform>Traxsource</ExclusivePlatform>
+  <ExclusiveDuration>2</ExclusiveDuration>
+  <iTunesPreOrderDate>2023-11-09</iTunesPreOrderDate>
+  <ExclusiveDate>2023-11-16</ExclusiveDate>
+  <Stores>Traxsource,Beatport,JunoDownload,Spotify,iTunes</Stores>
+  <Territories>WW</Territories>
+</Release>
