@@ -1300,7 +1300,7 @@ if (mysqli_num_rows($query) > 0) {
 
 
 
-            // =======================================================================
+            // ==========================Genre=============================================
 
             tracks_html +=
               '<div class="col-md-6"><label class="form-label" for="track_secondary_genre' +
@@ -1316,7 +1316,7 @@ if (mysqli_num_rows($query) > 0) {
             // '">Recording Year <span style="color: red;">(required)</span></label></label><select id="track_recording_year' +
             // i +
             // '" name="track_recording_year[]" class="form-control"><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option></select></div>';
-
+            //======================================================== Recording Year====================================================
             tracks_html +=
               '<div class="col-md-6"><label class="form-label" for="track_recording_year' +
               i +
@@ -1358,27 +1358,224 @@ if (mysqli_num_rows($query) > 0) {
 
             tracks_html += '</select></div>';
 
-
+            // ================================================Country Recording===========================================
             tracks_html +=
-              '<div class="col-md-6"><label class="form-label" for="track_album_only' + i +
-              '">Album Only <span style="color: red;">(required)</span></label></label><br><input type="checkbox" id="track_album_only' +
+              '<div class="col-md-6"><label class="form-label" for="track_country_recording' +
               i +
-              '" name="track_album_only[]" value="Yes" class="form-check-input"><input type="hidden" name="track_album_only[]" value="No"></div>';
+              '">Country Recording <span style="color: red;">(required)</span></label></label><select id="track_country_recording' +
+              i +
+              '" name="track_country_recording[]" class="form-control">';
+
+
+            const countries = ['South Africa', 'Nigeria', 'Greece', 'United Kingdom', 'Pakistan', 'India', 'Vietnam', 'USA', 'Canada'];
+
+            for (const country of countries) {
+              <?php
+              if (isset($draft_data["track_country_recording[]"])) {
+                # code...
+                if (is_array($draft_data["track_country_recording[]"])) {
+                  # code...
+              
+                  ?>
+                  let CountryValue = <?php echo json_encode($draft_data["track_country_recording[]"]) ?>;
+
+                  var isSelected = CountryValue[index_for_input] === country ? 'selected' : '';
+                  tracks_html += '<option value="' + country + '" ' + isSelected + '>' + country + '</option>';
+
+                <?php } else {
+
+                  ?>
+                  var isSelected = "<?php echo $draft_data["track_country_recording[]"] ?>" === country ? 'selected' : '';
+                  tracks_html += '<option value="' + country + '" ' + isSelected + '>' + country + '</option>';
+
+                  <?php
+                }
+
+              } else {
+                ?>
+                tracks_html += '<option value="' + country + '">' + country + '</option>';
+
+
+                <?php
+              } ?>
+            }
+
+            tracks_html += '</select></div>';
+
+
+            // =========================ISRC Code=====================================================================
+            tracks_html +=
+              '<div class="col-md-6"><label class="form-label" for="track_isrc_code' +
+              i +
+              '">ISRC Code <span style="color: red;">(required)</span></label></label><select id="track_isrc_code' +
+              i +
+              '" name="track_i_s_r_c_code[]" class="form-control">';
+
+            const isrcCodes = ['GET'];
+
+            for (const code of isrcCodes) {
+              <?php
+              if (isset($draft_data["track_i_s_r_c_code[]"])) {
+                # code...
+                if (is_array($draft_data["track_i_s_r_c_code[]"])) {
+                  # code...
+              
+                  ?>
+                  let CodeValue = <?php echo json_encode($draft_data["track_i_s_r_c_code[]"]) ?>;
+
+                  var isSelected = CodeValue[index_for_input] === code ? 'selected' : '';
+                  tracks_html += '<option value="' + code + '" ' + isSelected + '>' + code + '</option>';
+
+                <?php } else {
+
+                  ?>
+                  var isSelected = "<?php echo $draft_data["track_i_s_r_c_code[]"] ?>" === code ? 'selected' : '';
+                  tracks_html += '<option value="' + code + '" ' + isSelected + '>' + code + '</option>';
+
+                  <?php
+                }
+
+              } else {
+                ?>
+                tracks_html += '<option value="' + code + '">' + code + '</option>';
+
+
+                <?php
+              } ?>
+            }
+
+            tracks_html += '</select></div>';
+            // ====================================================
+            // tracks_html +=
+            //   '<div class="col-md-6"><label class="form-label" for="track_album_only' + i +
+            //   '">Album Only <span style="color: red;">(required)</span></label></label><br><input type="checkbox" id="track_album_only' +
+            //   i +
+            //   '" name="track_album_only[]" value="Yes" class="form-check-input"><input type="hidden" name="track_album_only[]" value="No"></div>';
+            <?php
+            if (isset($draft_data["track_album_only[]"])) {
+              # code...
+              if (is_array($draft_data["track_album_only[]"])) {
+                #
+            
+                ?>
+                let track_album_only = <?php echo json_encode($draft_data["track_album_only[]"]) ?>;
+                tracks_html += '<div class="col-md-6"><label class="form-label" for="track_album_only' + i + '">Album Only <span style="color: red;">(required)</span></label><br><input type="checkbox" id="track_album_only' + i
+                  + '" name="track_album_only[]" value="Yes" class="form-check-input"'
+                  + (track_album_only[index_for_input] == "No" ? '' : 'checked') +
+                  '><input type="hidden" name="track_album_only[]" value="No"></div>';
+                <?php
+
+              } else {
+                ?>
+
+                tracks_html += '<div class="col-md-6"><label class="form-label" for="track_album_only' + i + '">Album Only <span style="color: red;">(required)</span></label><br><input type="checkbox" id="track_album_only' + i + '" name="track_album_only[]" value="Yes" class="form-check-input"' + ($draft_data["track_album_only[]"] == "No" ? '' : 'checked') + '><input type="hidden" name="track_album_only[]" value="No"></div>';
+
+
+              <?php }
+            } ?>
+
+            // ================================Explicit status=======================================
             // tracks_html += '<div class="col-sm-6"><label class="form-label" for="track_vocals'+i+'">Vocals</label><select class="form-control" id="track_vocals'+i+'" name="track_vocals[]"><option value="Yes">Yes</option><option value="No">No</option></select></div>';
             tracks_html +=
               '<div class="col-sm-6"><label class="form-label" for="track_explicit_status' +
               i +
               '">Explicit Status <span style="color: red;">(required)</span></label></label><select class="form-control" id="track_explicit_status' +
               i +
-              '" name="track_explicit_status[]"><option value="Explicit">Explicit</option><option value="Non-Explicit">Non-Explicit</option><option value="Clean">Clean</option></select></div>';
+              '" name="track_explicit_status[]">';
+
+
+            const Explicit = ['Explicit', 'Non-Explicit', 'Clean'];
+
+            for (const Explicits of Explicit) {
+              <?php
+              if (isset($draft_data["track_explicit_status[]"])) {
+                # code...
+                if (is_array($draft_data["track_explicit_status[]"])) {
+                  # code...
+              
+                  ?>
+                  let ExplicitValue = <?php echo json_encode($draft_data["track_explicit_status[]"]) ?>;
+
+                  var isSelected = ExplicitValue[index_for_input] === Explicits ? 'selected' : '';
+                  tracks_html += '<option value="' + Explicits + '" ' + isSelected + '>' + Explicits + '</option>';
+
+                <?php } else {
+
+                  ?>
+                  var isSelected = "<?php echo $draft_data["track_explicit_status[]"] ?>" === Explicits ? 'selected' : '';
+                  tracks_html += '<option value="' + Explicits + '" ' + isSelected + '>' + Explicits + '</option>';
+
+                  <?php
+                }
+
+              } else {
+                ?>
+                tracks_html += '<option value="' + Explicits + '">' + Explicits + '</option>';
+
+
+                <?php
+              } ?>
+            }
+
+            tracks_html += '</select></div>';
+
+
+            //  ==========================================================================================
+
             tracks_html +=
               '<div class="col-md-6"><label class="form-label" for="track_primary_genre' + i +
               '">Vocal Language <span style="color: red;">(required)</span></label></label><select id="track_vocal_lang' +
               i + '" name="track_vocal_language[]" class="select2 vocal_language" data-id="' +
-              i + '"><option label=" "> - Select - </option><?php $query = $db->query("SELECT * FROM languages");
-              while ($row = $query->fetch_assoc()) {
+              i + '"><option label=" " value=""> - Select - </option>';
+
+            <?php $query = $db->query("SELECT * FROM languages");
+            while ($row = $query->fetch_assoc()) {
+
+              if (isset($draft_data["track_vocal_language[]"])) {
+                # code...
+                if (is_array($draft_data["track_vocal_language[]"])) {
+                  # code...
+            
+                  ?>
+                  var trackVocalLanguage = <?php echo json_encode($draft_data["track_vocal_language[]"]) ?>;
+
+                  if (trackVocalLanguage[index_for_input] == "<?php echo $row['key'] ?>") {
+                    // console.log(trackVocalLanguage[index_for_input])
+                    tracks_html += '<option selected value="<?php echo $row['key'] ?>"> <?php echo $row['name'] ?></option>';
+                  }
+                  else {
+
+                    tracks_html += '<option  value="<?php echo $row['key'] ?>"> <?php echo $row['name'] ?></option>';
+                  }
+
+
+
+                  <?php
+
+                } else {
+                  ?>
+
+                   trackVocalLanguage = <?php echo $draft_data["track_vocal_language[]"] ?>;
+
+                  if (trackVocalLanguage == "<?php echo $row['key'] ?>") {
+
+                    tracks_html += '<option selected value="<?php echo $row['key'] ?>"> <?php echo $row['name'] ?></option>';
+                  }
+                  else {
+
+                    tracks_html += '<option  value="<?php echo $row['key'] ?>"> <?php echo $row['name'] ?></option>';
+                  }
+
+                  <?php
+                }
+              } else {
                 echo '<option value="' . $row['key'] . '">' . $row['name'] . '</option>';
-              } ?></select></div>';
+              }
+
+            } ?>
+
+
+            tracks_html += '</select></div>';
 
 
             if (tracks_count >= 1) {
@@ -1459,7 +1656,7 @@ if (mysqli_num_rows($query) > 0) {
                 success: function (response) {
                   console.log(response);
                   selectedArtists = JSON.parse(response);
-                
+
                   // if (typeof JSON.parse(response) == "string") {
                   //   selectedArtists = response;
                   // }
