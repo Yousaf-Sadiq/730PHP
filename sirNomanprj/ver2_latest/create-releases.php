@@ -1457,13 +1457,15 @@ if (mysqli_num_rows($query) > 0) {
                   primary_artist_count: primaryArtistCount++
                 }, // Increment here
                 success: function (response) {
-                  console.log(typeof response);
-                  if (typeof response == "string") {
-                    selectedArtists = response;
-                  }
-                  else {
-                    selectedArtists = JSON.parse(response);
-                  }
+                  console.log(response);
+                  selectedArtists = JSON.parse(response);
+                
+                  // if (typeof JSON.parse(response) == "string") {
+                  //   selectedArtists = response;
+                  // }
+                  // else {
+                  //   selectedArtists = JSON.parse(response);
+                  // }
 
                   // console.log(Array.isArray(JSON.parse(response))+"okadsjkdsjlkdsa")
                   // console.log("PHP variable updated successfully." + primaryArtistCount);
