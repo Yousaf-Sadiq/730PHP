@@ -232,6 +232,7 @@ if (mysqli_num_rows($query) > 0) {
       position: fixed;
       /* Fixed positioning */
       top: 20px;
+      /* width: 10%; */
       /* Distance from the top of the viewport */
       right: 20px;
       /* Distance from the right of the viewport */
@@ -239,7 +240,8 @@ if (mysqli_num_rows($query) > 0) {
       /* To ensure it's above other content */
       text-align: center;
       /* Center-align text */
-      font-size: 16px;
+      font-size: 1.5rem;
+      
       /* Font size */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       /* Light shadow */
@@ -841,19 +843,44 @@ if (mysqli_num_rows($query) > 0) {
                           <?php $query = $db->query("SELECT * FROM exclusive_platforms");
                           while ($row = $query->fetch_assoc()) { ?>
                             <div class="col-sm-2 d-flex">
-                              <input type="checkbox" name="stores[]" id="stores" value="<?php echo $row['title']; ?>"
-                                class="form-check-input mx-2" />
+                              <?php
+                              $valueToCheck = $row['title'];
+                              $checked = "";
+                              if (in_array($valueToCheck, $draft_data["stores[]"])) {
+                                $checked = "checked";
+                              } else {
+                                $checked = "";
+
+                              }
+                              ?>
+                              <input type="checkbox" <?php echo $checked; ?> name="stores[]" id="stores"
+                                value="<?php echo $row['title']; ?>" class="form-check-input mx-2" />
                               <label class="form-label" for="pre_order_date"><?php echo $row['title']; ?></label>
                             </div>
                           <?php } ?>
+
                           <div class="col-sm-6">
                             <label class="form-label" for="exclusive_platform">Exclusive
                               Platform</label>
                             <select name="exclusive_platform" id="exclusive_platform" class="select2">
-                              <option label=" ">- Select Platform -</option>
+                              <option label=" " value="">- Select Platform -</option>
                               <?php $query = $db->query("SELECT * FROM exclusive_platforms");
                               while ($row = $query->fetch_assoc()) {
-                                echo '<option value="' . $row['title'] . '">' . $row['title'] . '</option>';
+                                if (isset($draft_data["exclusive_platform"]) && !empty($draft_data["exclusive_platform"])) {
+
+                                  if ($row["title"] == $draft_data["exclusive_platform"]) {
+                                    # code...
+                                    echo '<option selected value="' . $row['title'] . '">' . $row['title'] . '</option>';
+                                  } else {
+                                    echo '<option  value="' . $row['title'] . '">' . $row['title'] . '</option>';
+
+                                  }
+
+                                } else {
+
+                                  echo '<option  value="' . $row['title'] . '">' . $row['title'] . '</option>';
+                                }
+
                               } ?>
                             </select>
                           </div>
@@ -861,25 +888,35 @@ if (mysqli_num_rows($query) > 0) {
                             <label class="form-label" for="exclusive_duration">Exclusive
                               Duration</label>
                             <select name="exclusive_duration" id="exclusive_duration" class="select2">
-                              <option label=" ">- Select -</option>
+                              <option label=" " value="">- Select -</option>
+                              <?php
+                                  $exclusive_duration=[2,4];
+                              foreach($exclusive_duration as $i){?>
+                              <option
+                              value="<?php echo $i; ?>"
+                                <?php if ($i==$draft_data["exclusive_duration"]){echo 'selected';}?>>
+                                <?php echo $i .' Month(s) '; ?></option>
+                              <?php } ?>
+                            </select>
+<!--                          
                               <option value="2">2 </option>
                               <option value="4">4</option>
 
-                            </select>
+                            </select> -->
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="pre_order_date">Pre-Order Date
                               <span style="color: red;">(required)</span></label></label>
-                            <input type="date" name="i_tunes_pre_order_date" id="pre_order_date" class="form-control" />
+                            <input type="date"  value="<?php echo isset($draft_data["i_tunes_pre_order_date"]) ?  $draft_data["i_tunes_pre_order_date"] : " " ?>" name="i_tunes_pre_order_date" id="pre_order_date" class="form-control" />
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="promo_date">Promo Date</label>
-                            <input type="date" name="exclusive_date" id="promo_date" class="form-control" />
+                            <input type="date" value="<?php echo isset($draft_data["exclusive_date"]) ?  $draft_data["exclusive_date"] : " " ?>" name="exclusive_date" id="promo_date" class="form-control" />
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="live_date">Live Date <span
                                 style="color: red;">(required)</span></label></label>
-                            <input type="date" name="release_date" id="live_date" class="form-control" />
+                            <input type="date" value="<?php echo isset($draft_data["release_date"]) ?  $draft_data["release_date"] : " " ?>" name="release_date" id="live_date" class="form-control" />
                           </div>
                           <div class="col-12 d-flex justify-content-between">
                             <button class="btn btn-primary btn-prev">
@@ -1555,7 +1592,7 @@ if (mysqli_num_rows($query) > 0) {
                 } else {
                   ?>
 
-                   trackVocalLanguage = <?php echo $draft_data["track_vocal_language[]"] ?>;
+                  trackVocalLanguage = <?php echo $draft_data["track_vocal_language[]"] ?>;
 
                   if (trackVocalLanguage == "<?php echo $row['key'] ?>") {
 
@@ -1569,7 +1606,7 @@ if (mysqli_num_rows($query) > 0) {
                   <?php
                 }
               } else {
-                echo '<option value="' . $row['key'] . '">' . $row['name'] . '</option>';
+                echo "tracks_html +='<option value=\"{$row['key']}\" >{$row['name']}</option>';";
               }
 
             } ?>
