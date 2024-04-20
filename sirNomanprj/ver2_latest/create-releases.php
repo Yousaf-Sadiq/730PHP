@@ -145,7 +145,7 @@ if (mysqli_num_rows($query) > 0) {
   if (isset($draft_data["artists[]"])) {
     $draft_data2 = json_encode($draft_data["artists[]"]);
   } else {
-    $draft_data2 = "''";
+    $draft_data2 = "' '";
   }
 }
 
@@ -236,12 +236,12 @@ if (mysqli_num_rows($query) > 0) {
       /* Distance from the top of the viewport */
       right: 20px;
       /* Distance from the right of the viewport */
-      z-index: 1000;
+      z-index: 9999999999999999999;
       /* To ensure it's above other content */
       text-align: center;
       /* Center-align text */
       font-size: 1.5rem;
-      
+
       /* Font size */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       /* Light shadow */
@@ -442,18 +442,26 @@ if (mysqli_num_rows($query) > 0) {
                         </div>
                         <div class="row g-3">
                           <div class="col-md-4">
-                            <img id="previewImg" class="w-100 d-none" src="" alt="Placeholder">
+                            <img id="previewImg"
+                              src="./releases/<?php echo isset($draft_data["final_cover"]) ? $draft_data["final_cover"] : "" ?>"
+                              class="w-100 " src="" alt="Placeholder">
                           </div>
+
+
                           <div class="col-sm-12">
                             <div class="input-group">
                               <input type="file" class="form-control" onchange="previewFile(this);" id="cover"
                                 name="cover_art" value="">
-                              <input type="hidden" name="final_cover" id="final_cover" value="">
+
+                              <input type="hidden" name="final_cover" id="final_cover"
+                                value="<?php echo isset($draft_data["final_cover"]) ? $draft_data["final_cover"] : "" ?>">
+
+
                               <label class="input-group-text" for="coverart">Cover
                                 Art<span style="color: red;">(required)</span></label></label>
                             </div>
                           </div>
-                          <h5>Composer tk complete hogya hai </h5>
+
                           <script>
                             function open_downloads_menu() {
                               $(".downloads_menu, .downloads_menu_btn").addClass("show");
@@ -539,7 +547,8 @@ if (mysqli_num_rows($query) > 0) {
                                     '<div class="alert alert-success">Files Uploaded Successfully</div>'
                                   );
                                   var data = JSON.parse(this.response);
-                                  $("#final_cover").val(data.cover_art);
+                                  // console.log(this.response)
+                                  $("#final_cover").val(data.rid + "/" + data.cover_art);
 
                                   $("#uploaded_image").show();
                                   // $('#cover').val() = '';
@@ -844,15 +853,21 @@ if (mysqli_num_rows($query) > 0) {
                           while ($row = $query->fetch_assoc()) { ?>
                             <div class="col-sm-2 d-flex">
                               <?php
-                              $valueToCheck = $row['title'];
                               $checked = "";
-                              if (in_array($valueToCheck, $draft_data["stores[]"])) {
-                                $checked = "checked";
-                              } else {
-                                $checked = "";
+                              if (isset($draft_data["stores[]"])) {
 
+
+                                $valueToCheck = $row['title'];
+
+                                if (in_array($valueToCheck, $draft_data["stores[]"])) {
+                                  $checked = "checked";
+                                } else {
+                                  $checked = "";
+
+                                }
                               }
                               ?>
+
                               <input type="checkbox" <?php echo $checked; ?> name="stores[]" id="stores"
                                 value="<?php echo $row['title']; ?>" class="form-check-input mx-2" />
                               <label class="form-label" for="pre_order_date"><?php echo $row['title']; ?></label>
@@ -890,15 +905,29 @@ if (mysqli_num_rows($query) > 0) {
                             <select name="exclusive_duration" id="exclusive_duration" class="select2">
                               <option label=" " value="">- Select -</option>
                               <?php
-                                  $exclusive_duration=[2,4];
-                              foreach($exclusive_duration as $i){?>
-                              <option
-                              value="<?php echo $i; ?>"
-                                <?php if ($i==$draft_data["exclusive_duration"]){echo 'selected';}?>>
-                                <?php echo $i .' Month(s) '; ?></option>
-                              <?php } ?>
+                              $exclusive_duration = [2, 4];
+                              foreach ($exclusive_duration as $i) { ?>
+                                <?php if (isset($draft_data["exclusive_duration"])) {
+                                  # code...
+                                  ?>
+
+                                  <option value="<?php echo $i; ?>" <?php if ($i == $draft_data["exclusive_duration"]) {
+                                       echo 'selected';
+                                     } ?>>
+                                    <?php echo $i . ' Month(s) '; ?>
+                                  </option>
+
+
+                                <?php } else {
+                                  ?>
+                                  <option value="<?php echo $i; ?>">
+                                    <?php echo $i . ' Month(s) '; ?>
+                                  </option>
+                                  <?php
+                                }
+                              } ?>
                             </select>
-<!--                          
+                            <!--                          
                               <option value="2">2 </option>
                               <option value="4">4</option>
 
@@ -907,16 +936,22 @@ if (mysqli_num_rows($query) > 0) {
                           <div class="col-sm-4">
                             <label class="form-label" for="pre_order_date">Pre-Order Date
                               <span style="color: red;">(required)</span></label></label>
-                            <input type="date"  value="<?php echo isset($draft_data["i_tunes_pre_order_date"]) ?  $draft_data["i_tunes_pre_order_date"] : " " ?>" name="i_tunes_pre_order_date" id="pre_order_date" class="form-control" />
+                            <input type="date"
+                              value="<?php echo isset($draft_data["i_tunes_pre_order_date"]) ? $draft_data["i_tunes_pre_order_date"] : " " ?>"
+                              name="i_tunes_pre_order_date" id="pre_order_date" class="form-control" />
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="promo_date">Promo Date</label>
-                            <input type="date" value="<?php echo isset($draft_data["exclusive_date"]) ?  $draft_data["exclusive_date"] : " " ?>" name="exclusive_date" id="promo_date" class="form-control" />
+                            <input type="date"
+                              value="<?php echo isset($draft_data["exclusive_date"]) ? $draft_data["exclusive_date"] : " " ?>"
+                              name="exclusive_date" id="promo_date" class="form-control" />
                           </div>
                           <div class="col-sm-4">
                             <label class="form-label" for="live_date">Live Date <span
                                 style="color: red;">(required)</span></label></label>
-                            <input type="date" value="<?php echo isset($draft_data["release_date"]) ?  $draft_data["release_date"] : " " ?>" name="release_date" id="live_date" class="form-control" />
+                            <input type="date"
+                              value="<?php echo isset($draft_data["release_date"]) ? $draft_data["release_date"] : " " ?>"
+                              name="release_date" id="live_date" class="form-control" />
                           </div>
                           <div class="col-12 d-flex justify-content-between">
                             <button class="btn btn-primary btn-prev">
@@ -1057,7 +1092,9 @@ if (mysqli_num_rows($query) > 0) {
       // Add a sample tag programmatically
       // value change in artist tag 
 
-
+      function getFileExtension(filename) {
+        return filename.split('.').pop();
+      }
       var artist = <?php echo $draft_data2 ?>;
 
       if (!Array.isArray(artist)) {
@@ -1122,7 +1159,40 @@ if (mysqli_num_rows($query) > 0) {
               '<div class="col-sm-12"><div class="input-group"><input type="file" class="form-control track_upload" id="track_audio_file' +
               i + '" name="track_audio_file[]" data-file-id="' + i +
               '" class="input-group-text" for="track_audio_file' + i +
-              '" >Audio File <span style="color: red;">(required)</span></label></label></div></div>';
+              '" >Audio File <span style="color: red;">(required)</span></label></label>';
+
+            <?php
+            if (isset($draft_data["track_audio_files[]"])) {
+              if (is_array($draft_data["track_audio_files[]"])) {
+                ?>
+
+                var audioFiles = <?php echo json_encode($draft_data['track_audio_files[]']); ?>;
+                var newArray = audioFiles.map(str => str.replace(/\\/g, '').trim());
+                var extensions = newArray.map(str => str.split('.').pop());
+                console.log(extensions)
+
+                tracks_html += '<input type="hidden" value="' + newArray[index_for_input] + '" name="track_audio_files[]" id="audioFile"></div></div>';
+                tracks_html += "<audio class='plyr-audio-player' controls>";
+                tracks_html += " <source src='./releases/" + newArray[index_for_input] + "' type='audio/" + extensions[index_for_input] + "'>";
+                tracks_html += "</audio>";
+
+                console.log(newArray[index_for_input]);
+
+                <?php
+              } else {
+                ?>
+
+                var audioFile = '<?php echo isset($draft_data['track_audio_files[]']) ? $draft_data['track_audio_files[]'] : " " ?>';
+
+                tracks_html += '<input type="hidden" value="' + audioFile + '" name="track_audio_files[]" id="audioFile"></div></div>';
+                tracks_html += "<audio class='plyr-audio-player'>";
+                tracks_html += " <source src='./releases/" + audioFile + "' type='audio/wav'>";
+                tracks_html += "</audio>";
+                <?php
+              }
+            }
+            ?>
+
             //  track_name field
             <?php
             $track_name = "";
@@ -1592,7 +1662,7 @@ if (mysqli_num_rows($query) > 0) {
                 } else {
                   ?>
 
-                  trackVocalLanguage = <?php echo $draft_data["track_vocal_language[]"] ?>;
+                  trackVocalLanguage = "<?php echo $draft_data["track_vocal_language[]"] ?>";
 
                   if (trackVocalLanguage == "<?php echo $row['key'] ?>") {
 
@@ -2051,7 +2121,7 @@ if (mysqli_num_rows($query) > 0) {
 
             // Convert filtered data back to serialized string
             var serializedData = $.param(data);
-            console.log(serializedData)
+            //  console.log(serializedData)
 
             if (serializedData !== '') { // Check if there is any non-blank data to send
               var dataToSend = $('#wizard-validation-form').serialize();
@@ -2066,7 +2136,7 @@ if (mysqli_num_rows($query) > 0) {
                   $('#status-message').html('Saving...').addClass('show');
                 },
                 success: function (response) {
-                  console.log("AJAX request successful", response); // Log success response
+                  // console.log("AJAX request successful", response); // Log success response
 
                   $('#status-message').html('Saved').addClass('show');
 
@@ -2210,7 +2280,7 @@ if (mysqli_num_rows($query) > 0) {
       $(document).on("change", ".track_upload", function () {
 
 
-
+        let current_file = $(this);
 
         console.log("hello");
 
@@ -2245,6 +2315,7 @@ if (mysqli_num_rows($query) > 0) {
         // }
         // else
         // {
+        console.log($(this).get(0).files[0])
         form_data.append("track_file", $(this).get(0).files[0]);
         // }
         form_data.append("file_id", $(this).attr("data-file-id"));
@@ -2286,9 +2357,11 @@ if (mysqli_num_rows($query) > 0) {
 
           ajax_request.addEventListener('load', function (event) {
 
-            // $('#uploaded_image').html( '<div class="alert alert-success">Files Uploaded Successfully</div>');
+            $('#uploaded_image').html('<div class="alert alert-success">Files Uploaded Successfully</div>');
             var data = JSON.parse(this.response);
-            // $("#final_cover").val(data.cover_art);
+            console.log(data)
+
+            $(current_file).siblings("input#audioFile").val(data.rid + "/" + data.track_file);
 
             // $("#uploaded_image").show();
             // $('#cover').val() = '';
