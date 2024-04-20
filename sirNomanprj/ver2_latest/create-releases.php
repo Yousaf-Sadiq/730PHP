@@ -125,42 +125,36 @@ if (isset($_POST['catalog'])) {
 // echo $_SESSION["draft_id"];
 // die
 $query = $db->query("SELECT * FROM releases WHERE user_id = " . $_SESSION['login_userid'] . " AND status ='draft' LIMIT 1");
-// var_dump(mysqli_num_rows($query));
-// die();
+
 $draft_data = "";
 if (mysqli_num_rows($query) > 0) {
   $row = $query->fetch_assoc();
-  // var_dump($row['release_meta']);
-  // $draft_data = json_decode($row['release_meta'], true);
-  $draft_data = json_decode($row['release_meta'], true);
+  // Clean the JSON string
+  $cleanedJsonData = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $row['release_meta']);
 
+  $draft_data = json_decode($cleanedJsonData, true);
 
-  $draft_data2 = json_encode($draft_data["artists[]"]);
-  //   while ($row = $query->fetch_assoc()) {
+  if (json_last_error() !== JSON_ERROR_NONE) {
+    var_dump($row['release_meta']);
+    echo "JSON decode error: " . json_last_error_msg();
+  } else {
+    // var_dump($draft_data);
+  }
 
-  //    $draft_data = json_decode($row['release_meta'], true);
-//     // $draft_data =  $row['release_meta'];
-// //     echo '<pre>';
-// // print_r($draft_data);
-// // die();
-//   }
+  // Encode specific data from draft_data["artists[]"]
+  if (isset($draft_data["artists[]"])) {
+    $draft_data2 = json_encode($draft_data["artists[]"]);
+  } else {
+    $draft_data2 = "''";
+  }
 }
-// else {
-//   var_dump('no record');
-// }
-// print_r($draft_data['catalog']);
-// print_r($draft_data['track_name']);
-
-
-if (!isset($draft_data2) || empty($draft_data2)) {
-  $draft_data2 = "''";
-}
-
 
 // echo '<pre>';
 // print_r($draft_data);
+// echo '</pre>';
 
 // die();
+
 
 
 
@@ -1028,7 +1022,7 @@ if (!isset($draft_data2) || empty($draft_data2)) {
 
 
       var artist = <?php echo $draft_data2 ?>;
-      
+
       if (!Array.isArray(artist)) {
         artist = [<?php echo $draft_data2 ?>];
       }
@@ -1322,7 +1316,49 @@ if (!isset($draft_data2) || empty($draft_data2)) {
             // '">Recording Year <span style="color: red;">(required)</span></label></label><select id="track_recording_year' +
             // i +
             // '" name="track_recording_year[]" class="form-control"><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option></select></div>';
-           
+
+            tracks_html +=
+              '<div class="col-md-6"><label class="form-label" for="track_recording_year' +
+              i +
+              '">Recording Year <span style="color: red;">(required)</span></label></label><select id="track_recording_year' +
+              i +
+              '" name="track_recording_year[]" class="form-control">';
+
+            const recordingYears = ['2019', '2020', '2021', '2022', '2023', '2024'];
+            for (const year of recordingYears) {
+              <?php
+              if (isset($draft_data["track_recording_year[]"])) {
+                # code...
+                if (is_array($draft_data["track_recording_year[]"])) {
+                  # code...
+              
+                  ?>
+                  let yearValue = <?php echo json_encode($draft_data["track_recording_year[]"]) ?>;
+
+                  var isSelected = yearValue[index_for_input] === year ? 'selected' : '';
+                  tracks_html += '<option value="' + year + '" ' + isSelected + '>' + year + '</option>';
+
+                <?php } else {
+
+                  ?>
+                  var isSelected = "<?php echo $draft_data["track_recording_year[]"] ?>" === year ? 'selected' : '';
+                  tracks_html += '<option value="' + year + '" ' + isSelected + '>' + year + '</option>';
+
+                  <?php
+                }
+
+              } else {
+                ?>
+                tracks_html += '<option value="' + year + '">' + year + '</option>';
+
+
+                <?php
+              } ?>
+            }
+
+            tracks_html += '</select></div>';
+
+
             tracks_html +=
               '<div class="col-md-6"><label class="form-label" for="track_album_only' + i +
               '">Album Only <span style="color: red;">(required)</span></label></label><br><input type="checkbox" id="track_album_only' +
@@ -1584,7 +1620,7 @@ if (!isset($draft_data2) || empty($draft_data2)) {
                 }, // Increment here
                 success: function (response) {
                   selectedRemixer = JSON.parse(response);
-               
+
 
                   if (typeof selectedRemixer == "string") {
                     selectedRemixer = response;
