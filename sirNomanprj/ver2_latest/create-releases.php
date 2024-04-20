@@ -1548,13 +1548,13 @@ if (mysqli_num_rows($query) > 0) {
                 success: function (response) {
                   // selectedfeaturing = JSON.parse(response);
 
-
-                  if (typeof response == "string") {
-                    selectedfeaturing = response;
-                  }
-                  else {
-                    selectedfeaturing = JSON.parse(response);
-                  }
+                  selectedfeaturing = JSON.parse(response);
+                  // if (typeof response == "string") {
+                  //   selectedfeaturing = response;
+                  // }
+                  // else {
+                  //   selectedfeaturing = JSON.parse(response);
+                  // }
 
                   // console.log("PHP variable updated successfully." + primaryArtistCount);
                   if (selectedfeaturing != '') {
