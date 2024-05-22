@@ -1,5 +1,9 @@
 <?php
+
+
 declare(strict_types=1);
+namespace abc;
+
 // mysqli_connect();
 // new mysqli();
 /**
@@ -45,7 +49,7 @@ class AreaOfRectangle
 
         $area = $this->length * $this->width;
 
-        return  $area;
+        return $area;
     }
 
 
@@ -58,88 +62,58 @@ $abc = new AreaOfRectangle;
 $abc->setlength(5);
 $abc->setWidth(8);
 
-echo  "AREA OF RECTANGLE IS: ".$abc->calculate();
+echo "AREA OF RECTANGLE IS: " . $abc->calculate();
+
+
 
 abstract class person
 {
-    // condition  i want atleast one function of abstract 
+    protected $abc;
 
-    public function display()
+    protected function display()
     {
-        echo "i am a human being";
+
     }
 
-    abstract public function name(); // method overriding 
+    abstract public function name();
 
 }
 
 
-
-
-class A extends person
+interface persons
 {
 
-    // with in class we call function  called methods
-    //  and we call variable called properties
-    // access modifier  are public , private, protected
+    public function name();
+   
+}
 
-    // public $abc;
-    // ==============Encapsulation=========================
+interface A{
+    public function Address();
+    public function Age();
 
-    private $name;
-    private $contact;
+}
 
-    protected $test;
-
-    // setter or getter
+class area_Of_Rectangle implements persons,A
+{
 
     public function name()
     {
-        echo "function name called";
+
+    }
+    public function address()
+    {
+
     }
 
-    public function setName($n)
+    public function age()
     {
-        $this->name = $n;
-    }
 
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-}
-
-// a=b 
-// b=c 
-
-// a = c
-
-class B extends A
-{
-
-    public function SetTest()
-    {
-        $this->test = "This is test from Class B";
     }
 }
 
-// $abc = new person;
-
-// $qwer = new B; // object of class B/A
-
-// $qwer->setName("abc");
-// echo $qwer->getName();
-// $qwer->display();
 
 
-// $qwer2 = new A; // object of class A 
 
-// $qwer2->setName("abc2");
-// echo $qwer2->getName();
-// $qwer2->name();
-// echo $qwer->abc;
 
 
 ?>
