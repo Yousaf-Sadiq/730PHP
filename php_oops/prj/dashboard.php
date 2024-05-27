@@ -5,14 +5,14 @@ use app\database\Mysqli as DB;
 
 
 $obj = new DB;
-
+//  keys table columns   ]=> values database values
 $abc=[
     "email"=>"XYZ@gmail.com",
     "password"=>1234,
     "ptoken"=>1234
 ];
 
-$obj->insert("users",$abc);
+echo $obj->insert("users",$abc);
 ?>
 
 
