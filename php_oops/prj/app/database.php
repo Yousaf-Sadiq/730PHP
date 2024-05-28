@@ -9,6 +9,8 @@ class Mysqli
     private $userName = "root";
     private $password = "";
     private $db = "php_oops_crud";
+
+
     protected $conn;
 
 
@@ -35,10 +37,11 @@ class Mysqli
 
 
 
+    //  insert function-----------------------------------------------------
     public function insert(string $table, array $data)
     {
         $status = [
-            "status" => false,
+            "error" => 0,
             "message" => "",
         ];
 
@@ -46,18 +49,21 @@ class Mysqli
             //    insert query 
 
             $this->query = "INSERT INTO `{$table}` ";
-            // columns===================================================
-            $col = array_keys($data);
 
-            $col_string = "`" . implode("` , `", $col) . "`";
-            //=================================================================    
+
+
+            // columns===================================================
+            $col = array_keys($data); // array format 
+
+            $col_string = "`" . implode("` , `", $col) . "`"; // array to string
+            //============================╟=====================================    
 
             $this->query .= " ({$col_string})";
 
             //   values=========================
             $val = array_values($data);
 
-            $val_string = "'" . implode("' , '", $val) . "'";
+            $val_string = " '" . implode("' , '", $val) . "'";
             //  ------------------------------------------------------- 
             $this->query .= "VALUES  ({$val_string})";
 
@@ -69,27 +75,22 @@ class Mysqli
 
 
             if ($this->exe) {
-                
+
                 if ($this->conn->affected_rows > 0) {
 
-                    $status = [
-                        "status" => true,
-                        "message" => "Data has been inserted"
-                    ];
+                    $status["message"] = "Data has been inserted";
 
                 } else {
-                    $status = [
-                        "status" => false,
-                        "message" => "DATA HAS NOT BEEN INSERTED  {$this->query}",
-                    ];
+
+                    $status["message"] = "DATA HAS NOT BEEN INSERTED  {$this->query}";
+                    $status["error"]++;
 
                 }
 
             } else {
-                $status = [
-                    "status" => false,
-                    "message" => "ERROR IN QUERY  {$this->query}",
-                ];
+                $status["error"]++;
+                $status["message"] = "ERROR IN QUERY  {$this->query}";
+
 
 
             }
@@ -100,11 +101,10 @@ class Mysqli
         }
         // if table is not exist 
         else {
-            $status = [
-                "status" => false,
-                "message" => "{$table} is not exist in DB",
-            ];
 
+
+            $status["error"]++;
+            $status["message"] = "{$table} table is not exist in DB";
 
 
         }
@@ -134,4 +134,26 @@ class Mysqli
 
 }
 
+
+class helper extends Mysqli
+{
+
+    public function pre(array $a)
+    {
+        echo "<pre>";
+        print_r($a);
+        echo "</pre>";
+
+    }
+
+    public function filterData(string $data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        $data = $this->conn->real_escape_string($data);
+       
+        return $data;
+    }
+}
 ?>
