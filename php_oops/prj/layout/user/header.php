@@ -15,7 +15,16 @@ require_once dirname(__DIR__)."/../include/web.php";
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-</head>
+<style>
+    #error{
+        position: fixed;
+        top: 10px;
+        right: 5px;
+        width: 30%;
+    }
+</style>
+
+    </head>
 
 <body>
-   
+<div id="error"></div> 

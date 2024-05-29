@@ -18,6 +18,7 @@ $obj = new DB;
 
 
 
+
 <form class="text-bg-dark p-5 m-5" id="Myform" action="#" method="POST">
 
     <input type="hidden" name="insert" value="insert">
@@ -67,6 +68,12 @@ require_once dirname(__FILE__) . "/layout/user/footer.php";
         let response = await data.json();
 
         console.log(response);
+            if (response.error > 0 ) {
+                
+                response.msg.forEach(msg => {
+                  SHOW_MESSEGE("error",msg,"danger")   
+                });
+            }
 
     });
 </script>
