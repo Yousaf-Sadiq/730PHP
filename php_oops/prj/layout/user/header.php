@@ -20,7 +20,7 @@ require_once dirname(__DIR__)."/../include/web.php";
         position: fixed;
         top: 10px;
         right: 5px;
-        width: 30%;
+        width: 300px;
     }
 </style>
 

@@ -3,6 +3,11 @@ declare(strict_types=1);
 namespace app\database;
 
 
+
+require_once dirname(__FILE__) . "/trait/insert.php";
+require_once dirname(__FILE__) . "/trait/mysql.php";
+require_once dirname(__FILE__) . "/trait/checkTable.php";
+
 class Mysqli
 {
     private $host = "localhost";
@@ -17,6 +22,9 @@ class Mysqli
     private $query;
     private $exe;
     private $result = [];
+
+
+
     public function __construct()
     {
 
@@ -37,101 +45,14 @@ class Mysqli
 
 
 
-    //  insert function-----------------------------------------------------
-    public function insert(string $table, array $data)
+    use \Insert, \Mysql, \CheckTable;
+
+
+
+    public function __destruct()
     {
-        $status = [
-            "error" => 0,
-            "message" => "",
-        ];
-
-        if ($this->CheckTable($table)) {
-            //    insert query 
-
-            $this->query = "INSERT INTO `{$table}` ";
-
-
-
-            // columns===================================================
-            $col = array_keys($data); // array format 
-
-            $col_string = "`" . implode("` , `", $col) . "`"; // array to string
-            //============================╟=====================================    
-
-            $this->query .= " ({$col_string})";
-
-            //   values=========================
-            $val = array_values($data);
-
-            $val_string = " '" . implode("' , '", $val) . "'";
-            //  ------------------------------------------------------- 
-            $this->query .= "VALUES  ({$val_string})";
-
-
-            //  ------------------------execution-------------------------------
-
-            $this->exe = $this->conn->query($this->query);
-
-
-
-            if ($this->exe) {
-
-                if ($this->conn->affected_rows > 0) {
-
-                    $status["message"] = "Data has been inserted";
-
-                } else {
-
-                    $status["message"] = "DATA HAS NOT BEEN INSERTED  {$this->query}";
-                    $status["error"]++;
-
-                }
-
-            } else {
-                $status["error"]++;
-                $status["message"] = "ERROR IN QUERY  {$this->query}";
-
-
-
-            }
-
-
-
-
-        }
-        // if table is not exist 
-        else {
-
-
-            $status["error"]++;
-            $status["message"] = "{$table} table is not exist in DB";
-
-
-        }
-
-        return json_encode($status);
+        $this->conn->close();
     }
-
-    // ajax javascript fetch function 
-// Rest full API's
-    private function CheckTable(string $table)
-    {
-        $this->query = "SELECT * 
-        FROM information_schema.tables
-        WHERE table_schema = '{$this->db}' 
-            AND table_name = '{$table}'
-        LIMIT 1
-        ";
-
-        $this->exe = $this->conn->query($this->query);
-
-        if ($this->exe->num_rows > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 }
 
 
@@ -152,7 +73,7 @@ class helper extends Mysqli
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         $data = $this->conn->real_escape_string($data);
-       
+
         return $data;
     }
 }

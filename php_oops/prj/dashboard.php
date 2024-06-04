@@ -70,10 +70,15 @@ require_once dirname(__FILE__) . "/layout/user/footer.php";
         console.log(response);
             if (response.error > 0 ) {
                 
-                response.msg.forEach(msg => {
+                response.message.forEach(msg => {
                   SHOW_MESSEGE("error",msg,"danger")   
                 });
             }
+            else{
+                SHOW_MESSEGE("error",response.message,"success")
+            }
+
+
 
     });
 </script>
