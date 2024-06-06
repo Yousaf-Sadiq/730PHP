@@ -2,9 +2,11 @@
 require_once dirname(__FILE__) . "/layout/user/header.php";
 
 use app\database\Mysqli as DB;
+use app\database\helper as help;
 
 
 $obj = new DB;
+$help = new help;
 //  keys table columns   ]=> values database values
 // $abc=[
 //     "email"=>"XYZ@gmail.com",
@@ -14,7 +16,13 @@ $obj = new DB;
 
 // echo $obj->insert("user",$abc);
 // echo form_action;
+
+$obj->select("users");
+$abc = $obj->Getresult();
+// $help->pre($abc);
+
 ?>
+
 
 
 
@@ -38,6 +46,37 @@ $obj = new DB;
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+
+
+<div class="table-responsive">
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">USERNAME</th>
+                <th scope="col">EMAIL</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <?php
+            foreach ($abc as $key => $value) {
+                ?>
+                <tr>
+                    <td ><?php echo $value["user_id"] ?></td>
+                    <td><?php echo $value["user_name"] ?></td>
+                    <td><?php echo $value["email"] ?></td>
+                </tr>
+
+                <?php
+            }
+            ?>
+        </tbody>
+    </table>
+</div>
+
 
 <?php
 require_once dirname(__FILE__) . "/layout/user/footer.php";
@@ -68,15 +107,15 @@ require_once dirname(__FILE__) . "/layout/user/footer.php";
         let response = await data.json();
 
         console.log(response);
-            if (response.error > 0 ) {
-                
-                response.message.forEach(msg => {
-                  SHOW_MESSEGE("error",msg,"danger")   
-                });
-            }
-            else{
-                SHOW_MESSEGE("error",response.message,"success")
-            }
+        if (response.error > 0) {
+
+            response.message.forEach(msg => {
+                SHOW_MESSEGE("error", msg, "danger")
+            });
+        }
+        else {
+            SHOW_MESSEGE("error", response.message, "success")
+        }
 
 
 

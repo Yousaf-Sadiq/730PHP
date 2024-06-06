@@ -7,6 +7,8 @@ namespace app\database;
 require_once dirname(__FILE__) . "/trait/insert.php";
 require_once dirname(__FILE__) . "/trait/mysql.php";
 require_once dirname(__FILE__) . "/trait/checkTable.php";
+require_once dirname(__FILE__) . "/trait/select.php";
+require_once dirname(__FILE__) . "/trait/fetchResult.php";
 
 class Mysqli
 {
@@ -45,7 +47,7 @@ class Mysqli
 
 
 
-    use \Insert, \Mysql, \CheckTable;
+    use \Insert, \Mysql, \CheckTable,\MySelect,\FetchResult;
 
 
 
@@ -75,6 +77,15 @@ class helper extends Mysqli
         $data = $this->conn->real_escape_string($data);
 
         return $data;
+    }
+
+    public function showMessage(string $msg, string $class_type)
+    {
+        $html = "<div class='alert alert-{$class_type}' role='alert'>
+       {$msg}
+      </div>";
+
+        return $html;
     }
 }
 ?>
