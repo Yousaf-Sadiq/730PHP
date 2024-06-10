@@ -1,6 +1,6 @@
 <?php 
-require_once dirname(__DIR__)."/../app/database.php";
-require_once dirname(__DIR__)."/../include/web.php";
+require_once dirname(__DIR__)."/app/database.php";
+require_once dirname(__DIR__)."/include/web.php";
 
 ?>
 <!doctype html>
@@ -21,7 +21,6 @@ require_once dirname(__DIR__)."/../include/web.php";
         top: 10px;
         right: 5px;
         width: 300px;
-        z-index: 99999;
     }
 </style>
 
