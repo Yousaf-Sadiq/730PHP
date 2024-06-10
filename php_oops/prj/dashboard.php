@@ -195,7 +195,7 @@ require_once dirname(__FILE__) . "/layout/user/footer.php";
                 SHOW_MESSEGE("error", response.msg, "danger")
             }
             else {
-                response.message.forEach(msg => {
+                response.msg.forEach(msg => {
                     SHOW_MESSEGE("error", msg, "danger")
                 });
             }
