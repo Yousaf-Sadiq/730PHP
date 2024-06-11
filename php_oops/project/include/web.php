@@ -1,8 +1,7 @@
 <?php
 
 define("ROOTPATH", "http://localhost/");
-// define("FOLDER", "/project");
-define("FOLDER", "php_work_630/php_oops/project");
+define("FOLDER", "/project");
 
 
 define("SERVER1", ROOTPATH . FOLDER);

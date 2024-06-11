@@ -9,6 +9,7 @@ require_once dirname(__FILE__) . "/trait/mysql.php";
 require_once dirname(__FILE__) . "/trait/checkTable.php";
 require_once dirname(__FILE__) . "/trait/select.php";
 require_once dirname(__FILE__) . "/trait/fetchResult.php";
+require_once dirname(__FILE__) . "/trait/update.php";
 
 class Mysqli
 {
@@ -34,7 +35,7 @@ class Mysqli
             $this->conn = new \mysqli($this->host, $this->userName, $this->password, $this->db);
 
             if ($this->conn) {
-               
+                
             } else {
                 throw new \Exception("DATABASE CONNECTION ERROR");
             }
@@ -46,8 +47,12 @@ class Mysqli
     }
 
 
+    public function getSql()
+    {
+        return $this->query;
+    }
 
-    use \Insert, \Mysql, \CheckTable,\MySelect,\FetchResult;
+    use \Insert, \Mysql, \CheckTable, \MySelect, \FetchResult, \Update;
 
 
 
@@ -77,6 +82,15 @@ class helper extends Mysqli
         $data = $this->conn->real_escape_string($data);
 
         return $data;
+    }
+
+    public function showMessage(string $msg, string $class_type)
+    {
+        $html = "<div class='alert alert-{$class_type}' role='alert'>
+       {$msg}
+      </div>";
+
+        return $html;
     }
 }
 ?>

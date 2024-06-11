@@ -3,7 +3,7 @@
 trait Update
 {
 
-   
+    
     public function update(string $table, array $data, string $where)
     {
         $status = [
@@ -11,13 +11,9 @@ trait Update
             "msg" => []
         ];
 
-         // UPDATE `users` SET
-    //  `col`='[value-2]',`col`='[value-3]' 
-    //  WHERE 1
         if ($this->CheckTable($table)) {
 
             $updates = "";
-
             foreach ($data as $key => $value) {
                 $updates .= "`{$key}`= '{$value}' , ";
             }
@@ -26,13 +22,10 @@ trait Update
 
 
             $this->query = "UPDATE `{$table}` SET {$updates}   WHERE {$where}";
-
-
             $this->exe = $this->conn->query($this->query);
 
             if ($this->exe) {
                 if ($this->conn->affected_rows > 0) {
-
                     array_push($status["msg"], "DATA HAS BEEN UPDATED");
                 } else {
                     $status["error"]++;
@@ -47,9 +40,6 @@ trait Update
             $status["error"]++;
             array_push($status["msg"], "THIS {$table} TABLE IS NOT EXISTED");
         }
-
-
-        
 
         return json_encode($status);
     }

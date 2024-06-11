@@ -2,11 +2,19 @@
 require_once dirname(__FILE__) . "/layout/header.php";
 
 use app\database\Mysqli as DB;
+use app\database\helper as help;
 
 
 $obj = new DB;
+$help = new help;
+
+
+$obj->select("users");
+$abc = $obj->Getresult();
+
 
 ?>
+
 
 
 
@@ -34,12 +42,167 @@ $obj = new DB;
 
 
 
+<div class="table-responsive">
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">USERNAME</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <?php
+            foreach ($abc as $key => $value) {
+                ?>
+                <tr>
+                    <td><?php echo $value["user_id"] ?></td>
+                    <td><?php echo $value["user_name"] ?></td>
+                    <td><?php echo $value["email"] ?></td>
+                    <td>
+                        <?php
+                        $email = $value["email"];
+                        $user_name = $value["user_name"];
+                        $user_id = $value["user_id"];
+                        ?>
+                        <a href="javascript:void(0)"
+                            onclick="onEdit('<?php echo $email; ?>','<?php echo $user_name; ?>','<?php echo $user_id; ?>')"
+                            class="btn btn-md bg-info">EDIT</a>
+                        |
+                        <a href="" class="btn btn-md bg-danger">DELETE</a>
+                    </td>
+                </tr>
+
+                <?php
+            }
+            ?>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="modal fade" id="edit_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="edit_madoal_lable" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="edit_madoal_lable">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form class="text-bg-dark p-5" id="edit_form" action="#" method="POST">
+
+                    <input type="hidden" name="update" value="update">
+
+                    <input type="hidden" name="_token" id="_token">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">USER NAME</label>
+                        <input type="text" name="user_name" class="form-control" id="user_name"
+                            aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" name="Email" class="form-control" id="email" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                   
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 require_once dirname(__FILE__) . "/layout/footer.php";
 
 ?>
 
 <script>
+
+    function onEdit(Email, UserName, token) {
+
+        let myModal = document.querySelector("#edit_modal");
+
+        let bootstrap_modal_edit = new bootstrap.Modal(myModal)
+        bootstrap_modal_edit.show(myModal)
+
+        let email = document.querySelector("#email")
+        let userName = document.querySelector("#user_name")
+        let _token = document.querySelector("#_token")
+
+        email.value = Email
+        userName.value = UserName
+        _token.value = token
+
+
+
+    }
+    
+    let edit_form = document.querySelector("#edit_form");
+
+    edit_form.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        let Form_data = new FormData(edit_form);
+
+
+
+        let url = "<?php echo form_action; ?>";
+
+        const option = {
+            method: "POST",
+            body: Form_data
+        }
+
+        let data = await fetch(url, option);
+
+        let response = await data.json();
+
+        console.log(response);
+        if (response.error > 0) {
+
+            if (response.error == 1) {
+                SHOW_MESSEGE("error", response.msg, "danger")
+            }
+            else {
+                response.msg.forEach(msg => {
+                    SHOW_MESSEGE("error", msg, "danger")
+                });
+            }
+
+        }
+        else {
+            SHOW_MESSEGE("error", response.msg, "success")
+            let Mymodal = document.querySelector("#edit_modal");
+            const modal = bootstrap.Modal.getInstance(Mymodal);
+            modal.hide();
+
+            setTimeout(function () {
+                location.reload();
+            }, 500)
+        }
+
+
+
+    });
 
     let form = document.querySelector("#Myform");
 
@@ -63,15 +226,15 @@ require_once dirname(__FILE__) . "/layout/footer.php";
         let response = await data.json();
 
         console.log(response);
-            if (response.error > 0 ) {
-                
-                response.message.forEach(msg => {
-                  SHOW_MESSEGE("error",msg,"danger")   
-                });
-            }
-            else{
-                SHOW_MESSEGE("error",response.message,"success")
-            }
+        if (response.error > 0) {
+
+            response.message.forEach(msg => {
+                SHOW_MESSEGE("error", msg, "danger")
+            });
+        }
+        else {
+            SHOW_MESSEGE("error", response.message, "success")
+        }
 
 
 

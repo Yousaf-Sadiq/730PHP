@@ -10,6 +10,7 @@ require_once dirname(__FILE__) . "/trait/checkTable.php";
 require_once dirname(__FILE__) . "/trait/select.php";
 require_once dirname(__FILE__) . "/trait/fetchResult.php";
 require_once dirname(__FILE__) . "/trait/update.php";
+require_once dirname(__FILE__) . "/trait/delete.php";
 
 class Mysqli
 {
@@ -52,7 +53,7 @@ class Mysqli
         return $this->query;
     }
 
-    use \Insert, \Mysql, \CheckTable, \MySelect, \FetchResult, \Update;
+    use \Insert, \Mysql, \CheckTable, \MySelect, \FetchResult, \Update,\DELETES;
 
 
 

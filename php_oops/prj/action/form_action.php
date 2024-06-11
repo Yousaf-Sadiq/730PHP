@@ -59,7 +59,8 @@ if (isset($_POST["insert"]) && !empty($_POST["insert"])) {
         $data = [
             "email" => $email,
             "password" => password_hash($password, PASSWORD_BCRYPT),
-            "ptoken" => base64_encode($password)
+            "ptoken" => base64_encode($password),
+            "role_id" => 3
         ];
 
 
@@ -119,7 +120,7 @@ if (isset($_POST["update"]) && !empty($_POST["update"])) {
 
     } else {
 
-        // insert 
+        // update 
 
         $data = [
             "email" => $email,
@@ -129,6 +130,56 @@ if (isset($_POST["update"]) && !empty($_POST["update"])) {
 
 
         echo $db->update("users", $data, "`user_id`='{$user_id}'");
+    }
+    // echo json_encode([$email]);
+
+
+}
+
+
+
+
+if (isset($_POST["DELETES"]) && !empty($_POST["DELETES"])) {
+
+
+    $status = [
+        "error" => 0,
+        "msg" => []
+    ];
+    // echo json_encode(["ok"]);
+
+    $user_id = $help->filterData($_POST["_token"]);
+
+
+
+    if (!isset($user_id) || empty($user_id)) {
+
+        $status["error"]++;
+        array_push($status["msg"], "TOKEN IS REQUIRED");
+    }
+
+
+    $check_id = "SELECT * FROM `users` WHERE `user_id`='{$user_id}'";
+
+    $exe_id = $db->Mysql($check_id, true);
+
+    if ($exe_id) {
+
+    } else {
+        $status["error"]++;
+        array_push($status["msg"], "TOKEN IS INVALID");
+    }
+
+
+    if ($status["error"] > 0) {
+        echo json_encode($status);
+
+    } else {
+
+        // DELETE
+
+
+        echo $db->delete("users", "`user_id`='{$user_id}'");
     }
     // echo json_encode([$email]);
 

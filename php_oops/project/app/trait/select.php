@@ -43,7 +43,7 @@ trait MySelect
 
 
         } else {
-            $help->showmsg("THIS {$table} table is not existed", "danger");
+            $help->showMessage("THIS {$table} table is not existed", "danger");
         }
     }
 }
