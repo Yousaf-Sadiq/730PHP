@@ -19,6 +19,15 @@
     <link rel="stylesheet" href="<?php echo DOMAIN1;?>/assets/css/default.css">
     <link rel="stylesheet" href="<?php echo DOMAIN1;?>/assets/css/style.css">
     <link rel="stylesheet" href="<?php echo DOMAIN1;?>/assets/css/responsive.css">
+ <style>
+  #error{
+    position: fixed;
+    top:10px;
+    right: 10px;
+    width: 250px;
+    z-index: 999999999;
+  }
+ </style>
   </head>
   <body>
     <!-- preloader -->
@@ -26,6 +35,9 @@
       <div id="loader"></div>
     </div>
 
+    <div id="error">
+
+    </div>
     <?php require_once "header.php"; ?>
     <main>
     <?php require_once "sidebar.php"; ?>

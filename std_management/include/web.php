@@ -4,4 +4,6 @@ define("ROOTPATH","http://localhost/");
 define("FOLDER","php_work_630/php_oops/std_management");
 define("DOMAIN1",ROOTPATH.FOLDER);
 
+// admin Route 
+define("admin_Course_action",DOMAIN1."/action/admin/course/form_action.php");
 ?>
