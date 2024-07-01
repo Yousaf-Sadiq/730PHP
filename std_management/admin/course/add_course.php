@@ -38,7 +38,7 @@ require_once dirname(__DIR__) . "/../layout/admin/top.php";
         <div class="col-10">
           <div class="update-btn">
             <button type="submit" class="btn-1">Save</button>
-            <button class="btn-2">Cancel</button>
+            <button type="reset" class="btn-2">Cancel</button>
           </div>
         </div>
       </div>

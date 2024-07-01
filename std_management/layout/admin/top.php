@@ -1,3 +1,4 @@
+<?php require_once dirname(__DIR__)."/../app/database.php"; ?>
 <?php require_once dirname(__DIR__)."/../include/web.php"; ?>
  
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
     position: fixed;
     top:10px;
     right: 10px;
-    width: 250px;
+    width: 300px;
     z-index: 999999999;
   }
  </style>
