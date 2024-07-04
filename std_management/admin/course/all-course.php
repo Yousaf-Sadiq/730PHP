@@ -30,18 +30,19 @@ $row = $db->Getresult();
             <tr>
                 <th scope="row"><?php echo $count; ?></th>
                 <td><?php echo $courseData["course_name"] ?></td>
-                <td >
+                <td>
                     <textarea readonly name="" cols="50" rows="3" style="overflow: scroll;" id="">
-                    <?php echo $courseData["syllabus"] ?>
-                    </textarea>
+                                    <?php echo $courseData["syllabus"] ?>
+                                    </textarea>
                 </td>
                 <td>
                     <?php
-                    $course_id=$courseData["course_id"];
-                    $course_name=$courseData["course_name"];
-                    $course_sy=$courseData["syllabus"];
+                    $course_id = $courseData["course_id"];
+                    $course_name = $courseData["course_name"];
+                    $course_sy = $courseData["syllabus"];
                     ?>
-                    <a href="javascript:void(0)" onclick="OnEDit('<?php echo $course_id ?>','<?php echo $course_name ?>','<?php echo $course_sy ?>')">
+                    <a href="javascript:void(0)"
+                        onclick="OnEDit('<?php echo $course_id ?>','<?php echo $course_name ?>','<?php echo $course_sy ?>')">
                         UPDATE
                     </a>
                 </td>
@@ -68,7 +69,7 @@ $row = $db->Getresult();
                         <h4>EDIT  COURSE </h4>
                     </div> -->
                     <div class="veritical-form">
-                        <form action="#" id="add_course">
+                        <form action="#" id="edit_course">
                             <input type="hidden" name="UPDATES" value="UPDATE">
                             <input type="hidden" name="_token_edit" id="_token_edit">
                             <div class="add-user-input add-user-input-2 mb-20">
@@ -123,26 +124,26 @@ require_once dirname(__DIR__) . "/../layout/admin/footer.php";
 ?>
 <script>
 
-    function OnEDit(token,courseName,courseSyllabus) {
+    function OnEDit(token, courseName, courseSyllabus) {
         let myModal = document.querySelector("#edit_modal");
         let BootstrapModal = new bootstrap.Modal(myModal);
         BootstrapModal.show(myModal);
-        
+
         let _token_edit = document.querySelector("#_token_edit");
         let course_names = document.querySelector("#course_names");
         let Syllabus = document.querySelector("#Syllabus");
 
-        _token_edit.value=token;
-        course_names.value=courseName;
-        Syllabus.value=courseSyllabus;
+        _token_edit.value = token;
+        course_names.value = courseName;
+        Syllabus.value = courseSyllabus;
     }
 
 
-    let add_course = document.querySelector("#add_course");
-    add_course.addEventListener("submit", async function (e) {
+    let edit_course = document.querySelector("#edit_course");
+    edit_course.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        let formData = new FormData(add_course);
+        let formData = new FormData(edit_course);
 
         let url = "<?php echo admin_Course_action ?>";
 
@@ -156,7 +157,7 @@ require_once dirname(__DIR__) . "/../layout/admin/footer.php";
 
         let res = await data.json();
         console.log(res);
-        let msg = res.message;
+        let msg = res.msg;
         if (res.error > 0) {
 
 
@@ -167,6 +168,19 @@ require_once dirname(__DIR__) . "/../layout/admin/footer.php";
         }
         else {
             showMessage("error", msg, "success")
+
+            setTimeout(function () {
+
+                var genericModalEl = document.getElementById('edit_modal')
+                var modal = bootstrap.Modal.getInstance(genericModalEl)
+                modal.hide()
+
+
+                setTimeout(function () {
+                    location.reload();
+                }, 700)
+
+            }, 1000)
         }
     })
 

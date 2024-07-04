@@ -1,5 +1,6 @@
 <?php require_once dirname(__DIR__)."/../app/database.php"; ?>
 <?php require_once dirname(__DIR__)."/../include/web.php"; ?>
+<?php require_once dirname(__DIR__)."/../include/table_name.php"; ?>
  
 <!DOCTYPE html>
 <html class="no-js" lang="en">
