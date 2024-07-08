@@ -58,7 +58,10 @@ $db = new DB();
                         
                             ?>
 
-                            <option value="<?php echo $value["course_id"] ?>"><?php echo $value["course_name"] ?></option>
+
+                            <option value="<?php echo $value["course_id"] ?>">
+                                <?php echo $value["course_name"] ?>
+                            </option>
 
 
 
@@ -88,13 +91,13 @@ require_once dirname(__DIR__) . "/../layout/admin/footer.php";
 
 ?>
 <script>
-    let add_course = document.querySelector("#add_course");
-    add_course.addEventListener("submit", async function (e) {
+    let add_std = document.querySelector("#add_std");
+    add_std.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        let formData = new FormData(add_course);
+        let formData = new FormData(add_std);
 
-        let url = "<?php echo admin_Course_action ?>";
+        let url = "<?php echo admin_STD_action ?>";
 
         const option = {
             method: "POST",

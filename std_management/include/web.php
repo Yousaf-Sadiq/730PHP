@@ -16,7 +16,8 @@ define("all_admin_Course",DOMAIN1."/admin/course/all-course.php");
 
 // STUDENT MANAGEMENT ROUTE BY ADMIN
 
-define("admin_STD_action",DOMAIN1."/action/admin/std-user/form_action.php");
+define("admin_STD_action",DOMAIN1."/action/admin/std_user/form_action.php");
+
 define("add_std",DOMAIN1."/admin/std-user/add-student.php");
 
 ?>

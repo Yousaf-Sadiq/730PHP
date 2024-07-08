@@ -47,6 +47,9 @@ class Mysqli
 
     }
 
+    public function Get_insertID(){
+        return $this->conn->insert_id;
+    }
 
     public function getSql()
     {
