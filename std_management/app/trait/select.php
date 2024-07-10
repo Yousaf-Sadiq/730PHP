@@ -4,7 +4,7 @@ use app\database\helper as help;
 trait MySelect
 {
 
-    public function select(string $table, string $row = null, string $where = null, string $orderBy = null, string $limit = null)
+    public function select(string $table, string $row = null, string $join=null ,string $where = null, string $orderBy = null, string $limit = null)
     {
         $help = new help();
         /**
@@ -23,6 +23,9 @@ trait MySelect
 
             $this->query = "SELECT {$row} FROM `{$table}`";
 
+            if ($join != null) {
+                $this->query .= " {$join} ";
+            }
 
             if ($where != null) {
                 $this->query .= " WHERE {$where}";

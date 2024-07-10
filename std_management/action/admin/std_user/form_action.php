@@ -50,6 +50,13 @@ if (isset($_POST["inserts"]) && !empty($_POST["inserts"])) {
     }
 
 
+    $check_email = "SELECT * FROM `" . STD . "` WHERE `email`= '{$email}'";
+    $chk = $db->Mysql($check_email, true);
+
+    if ($chk) {
+        $status["error"]++;
+        array_push($status["message"], "STUDENT EMAIL ALREADY EXIST");
+    }
 
 
     if ($status["error"] > 0) {
@@ -70,7 +77,7 @@ if (isset($_POST["inserts"]) && !empty($_POST["inserts"])) {
 
 
         $std_insert_id = $db->Get_insertID();
-        
+
         $data_c = [
             "course_id" => $course_id,
             "std_id" => $std_insert_id,

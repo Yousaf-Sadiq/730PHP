@@ -47,8 +47,8 @@
               <ul class="sub-menu sidebar">
                 <li><a href="<?php echo all_admin_Course; ?>">STUDENT LIST</a></li>
                 <li><a href="<?php echo add_std; ?>">ADD STUDENT</a></li>
-                <li><a href="clients.html">clients</a></li>
-                <li><a href="user.html">user</a></li>
+                <li><a href="<?php echo view_std; ?>">ALL STUDENT</a></li>
+                
               </ul>
             </li>
             <!-- single-menu-list -->

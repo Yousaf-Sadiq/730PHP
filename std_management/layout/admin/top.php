@@ -33,9 +33,9 @@
   </head>
   <body>
     <!-- preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
       <div id="loader"></div>
-    </div>
+    </div> -->
 
     <div id="error">
 

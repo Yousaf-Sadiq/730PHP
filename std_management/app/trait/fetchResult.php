@@ -7,7 +7,7 @@ trait FetchResult
     {
         $help = new help();
 
-
+        $this->result=[];
         while ($row = $this->exe->fetch_assoc()) {
 
             array_push($this->result, $row);
