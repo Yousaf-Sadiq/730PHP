@@ -28,13 +28,13 @@ $row = $db->Getresult();
         $count = 1;
         foreach ($row as $std_data) {
             # code...
+        
+            $course = $db->select(STD_COURSE, "*", null, "`std_id`='{$std_data["std_id"]}'");
 
-            $course = $db->select(STD_COURSE,"*",null,"`std_id`='{$std_data["std_id"]}'");
-            
             $rows = $db->Getresult();
             // one to one 
             // ======================================================================
-            $course = $db->select(COURSE,"*",null,"`course_id`='{$rows[0]["course_id"]}'");
+            $course = $db->select(COURSE, "*", null, "`course_id`='{$rows[0]["course_id"]}'");
             $row_c = $db->Getresult();
             // $help->pre($rows);
             ?>
@@ -42,16 +42,19 @@ $row = $db->Getresult();
                 <th scope="row"><?php echo $count; ?></th>
                 <td><?php echo $std_data["user_name"] ?></td>
                 <td><?php echo $std_data["email"] ?></td>
-                <td><?php echo $row_c[0]["course_name"];  ?></td>
+                <td><?php echo $row_c[0]["course_name"]; ?></td>
 
                 <td>
                     <?php
                     $std_id = $std_data["std_id"];
                     $user_name = $std_data["user_name"];
                     $email = $std_data["email"];
+                    // =====================
+                    $course_name = $row_c[0]["course_name"];
+                    $course_id = $row_c[0]["course_id"];
                     ?>
                     <a href="javascript:void(0)"
-                        onclick="OnEDit('<?php echo $std_id ?>','<?php echo $user_name ?>','<?php echo $email ?>')">
+                        onclick="OnEDit('<?php echo $std_id ?>','<?php echo $user_name ?>','<?php echo $email ?>','<?php echo $course_id ?>')">
                         UPDATE
                     </a>
                 </td>
@@ -84,26 +87,37 @@ $row = $db->Getresult();
                             <div class="add-user-input add-user-input-2 mb-20">
                                 <div class="row  align-items-center">
                                     <div class="col-12 col-sm-2">
-                                        <label for="course_name">Course Name</label>
+                                        <label for="course_name">USER Name</label>
                                     </div>
                                     <div class="col-12 col-sm-10">
-                                        <input type="text" placeholder="Course Name" name="course_name"
-                                            id="course_names">
+                                        <input type="text" placeholder="USer Name" name="user_name" id="user_names">
                                     </div>
+                                </div>
+                            </div>
+                            <div class="add-user-input add-user-input-2 mb-20">
+                                <div class="row  align-items-center">
+                                    <div class="col-12 col-sm-2">
+                                        <label for="course_name">Email</label>
+                                    </div>
+                                    <div class="col-12 col-sm-10">
+                                        <input type="text" placeholder="Email" name="email" id="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-user-input mb-20">
+                                <label for="course">COURSE NAME</label>
+                                <div class="veritical-form">
+
+                                    <select class="form-select mb-3" id="course" name="course_name"
+                                        aria-label="Default select example">
+                                        <option selected="">Open this select menu</option>
+
+                                    </select>
+
                                 </div>
                             </div>
 
-                            <div class="add-user-message project-form-single mb-20">
-                                <div class="row">
-                                    <div class="col-12 col-sm-2">
-                                        <label for="message4">Syllabus Detail</label>
-                                    </div>
-                                    <div class="col-12 col-sm-10">
-                                        <textarea placeholder="Write Your Syllabus Here....." name="syllabus"
-                                            id="Syllabus"></textarea>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-2"></div>
                                 <div class="col-10">
@@ -133,18 +147,46 @@ require_once dirname(__DIR__) . "/../layout/admin/footer.php";
 ?>
 <script>
 
-    function OnEDit(token, courseName, courseSyllabus) {
+    async function OnEDit(token, userName, Email, courseId) {
+
         let myModal = document.querySelector("#edit_modal");
         let BootstrapModal = new bootstrap.Modal(myModal);
         BootstrapModal.show(myModal);
 
         let _token_edit = document.querySelector("#_token_edit");
-        let course_names = document.querySelector("#course_names");
-        let Syllabus = document.querySelector("#Syllabus");
+        let user_name = document.querySelector("#user_names");
+        let email = document.querySelector("#Email");
+        let course = document.querySelector("#course");
 
         _token_edit.value = token;
-        course_names.value = courseName;
-        Syllabus.value = courseSyllabus;
+        user_name.value = userName;
+        email.value = Email;
+
+
+        let formData = new FormData();
+
+        formData.append('course_id', courseId);
+
+        const option = {
+            method: "POST",
+            body: formData
+        }
+
+        let url = "<?php echo admin_fetchCourse ?>";
+        let data = await fetch(url, option);
+        let res = await data.json();
+
+        // console.log(res);
+        course.innerHTML =" ";
+       
+        res.forEach((ele) => {
+
+            course.innerHTML += ele
+
+        })
+
+
+
     }
 
 
